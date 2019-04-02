@@ -1,0 +1,65 @@
+ <!DOCTYPE html>
+<html>
+<head>
+  
+    <title>basicJS</title>
+    
+    
+</head>
+<body>
+    <button type="button" onclick="bold();"> Bold </button>
+    
+    <button type="button" onclick="italic();"> Italic </button>
+    
+    <button type="button" onclick="underline();"> Underline</button>
+<script>
+    function bold() { if (document.getElementById("n").style.fontWeight =="900")
+    document.getElementById("n").style.fontWeight = "";
+
+    else
+    document.getElementById("n").style.fontWeight="900"
+  }
+  function italic() { if (document.getElementById("n").style.fontStyle=="italic")
+document.getElementById("n").style.fontStyle="";
+else
+document.getElementById("n").style.fontStyle="italic"
+}
+
+function underline() { if (document.getElementById("n").style.textDecoration=="underline")
+document.getElementById("n").style.textDecoration = "" ;
+else
+document.getElementById("n").style.textDecoration="underline" }
+ 
+</script>
+    <select id="listfont" onchange="font();">
+        <option value="verdana"> verdana </option>
+        <option value="georgia"> Georgia </option>
+        <option value="Arial"> Arial </option>
+     </select>
+
+<script>
+    function font() {
+        var fontFromlist = document.getElementById("listfont").options[listfont.selectedIndex].text ;
+        document.getElementById("n").style.fontFamily=fontFromlist ;
+    }
+</script>
+
+   <label for="selected-choice-1" > Size </label>
+
+    <select id="size" onchange="Size();">
+        <option  value="60px"> 1 </option>
+        <option  value="80px"> 2 </option>
+        <option  value="100px"> 3 </option>
+        <option  value="120px"> 4 </option>
+    </select>
+<script>
+    function Size() {
+        var x=document.getElementById("size").options[size.selectedIndex].value;
+         document.getElementById("n").style.fontSize=x;
+       }
+    </script>
+    <p id="n"> Key 17 the Star </p>
+
+</body>
+
+</html>
